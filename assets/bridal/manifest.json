@@ -1,0 +1,142 @@
+[
+  {
+    "idx": 42,
+    "source": "微信图片_20260627221938_2636_432.jpg",
+    "asset": "assets/bridal/bridal-hero-couture.jpg",
+    "source_size": [
+      3648,
+      4792
+    ],
+    "asset_size": [
+      1370,
+      1800
+    ],
+    "bytes": 193917
+  },
+  {
+    "idx": 1,
+    "source": "微信图片_20260627221852_2595_432.jpg",
+    "asset": "assets/bridal/bridal-veil-editorial.jpg",
+    "source_size": [
+      2594,
+      3734
+    ],
+    "asset_size": [
+      1112,
+      1600
+    ],
+    "bytes": 128289
+  },
+  {
+    "idx": 2,
+    "source": "微信图片_20260627221853_2596_432.jpg",
+    "asset": "assets/bridal/bridal-sculptural-gown.jpg",
+    "source_size": [
+      2000,
+      3000
+    ],
+    "asset_size": [
+      1067,
+      1600
+    ],
+    "bytes": 249272
+  },
+  {
+    "idx": 10,
+    "source": "微信图片_20260627221901_2604_432.jpg",
+    "asset": "assets/bridal/bridal-atelier-wide.jpg",
+    "source_size": [
+      4921,
+      3281
+    ],
+    "asset_size": [
+      1800,
+      1200
+    ],
+    "bytes": 269997
+  },
+  {
+    "idx": 47,
+    "source": "微信图片_20260627221943_2641_432.png",
+    "asset": "assets/bridal/bridal-train-detail.jpg",
+    "source_size": [
+      1179,
+      2556
+    ],
+    "asset_size": [
+      738,
+      1600
+    ],
+    "bytes": 136290
+  },
+  {
+    "idx": 48,
+    "source": "微信图片_20260627221944_2642_432.jpg",
+    "asset": "assets/bridal/bridal-soft-silhouette.jpg",
+    "source_size": [
+      1440,
+      2160
+    ],
+    "asset_size": [
+      1000,
+      1500
+    ],
+    "bytes": 191409
+  },
+  {
+    "idx": 49,
+    "source": "微信图片_20260627221945_2643_432.jpg",
+    "asset": "assets/bridal/bridal-luxe-silhouette.jpg",
+    "source_size": [
+      1440,
+      2160
+    ],
+    "asset_size": [
+      1000,
+      1500
+    ],
+    "bytes": 313570
+  },
+  {
+    "idx": 56,
+    "source": "微信图片_20260627221958_2650_432.jpg",
+    "asset": "assets/bridal/bridal-evening-look.jpg",
+    "source_size": [
+      1440,
+      2162
+    ],
+    "asset_size": [
+      999,
+      1500
+    ],
+    "bytes": 187979
+  },
+  {
+    "idx": 59,
+    "source": "微信图片_20260627222001_2653_432.jpg",
+    "asset": "assets/bridal/bridal-portrait-look.jpg",
+    "source_size": [
+      1440,
+      2371
+    ],
+    "asset_size": [
+      911,
+      1500
+    ],
+    "bytes": 122123
+  },
+  {
+    "idx": 61,
+    "source": "微信图片_20260627222004_2655_432.jpg",
+    "asset": "assets/bridal/bridal-ceremony-gown.jpg",
+    "source_size": [
+      1440,
+      2407
+    ],
+    "asset_size": [
+      897,
+      1500
+    ],
+    "bytes": 115518
+  }
+]

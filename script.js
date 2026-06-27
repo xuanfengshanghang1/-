@@ -3,6 +3,8 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 const bookingForm = document.querySelector("[data-booking-form]");
 const formStatus = document.querySelector("[data-form-status]");
+const revealItems = document.querySelectorAll("[data-reveal]");
+const serviceChoices = document.querySelectorAll("[data-service-choice]");
 
 function setHeaderState() {
   if (!header) return;
@@ -13,6 +15,15 @@ function closeNav() {
   if (!header || !navToggle) return;
   header.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
+}
+
+function setServiceChoice(service) {
+  const serviceSelect = bookingForm?.querySelector('[name="service"]');
+  if (!serviceSelect || !service) return;
+  const option = Array.from(serviceSelect.options).find((item) => item.textContent.trim() === service);
+  if (option) {
+    serviceSelect.value = option.value || option.textContent;
+  }
 }
 
 setHeaderState();
@@ -32,6 +43,32 @@ if (nav) {
     }
   });
 }
+
+if (revealItems.length) {
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  }
+}
+
+serviceChoices.forEach((link) => {
+  link.addEventListener("click", () => {
+    setServiceChoice(link.dataset.serviceChoice);
+  });
+});
 
 if (bookingForm && formStatus) {
   bookingForm.addEventListener("submit", (event) => {
