@@ -412,6 +412,7 @@ h3 {
 .services,
 .cases,
 .attire,
+.journal,
 .process,
 .appointment {
   padding: 5rem 0;
@@ -450,8 +451,7 @@ h3 {
 
 .venue-feature img {
   width: 100%;
-  min-height: 28rem;
-  max-height: 38rem;
+  height: clamp(28rem, 48vw, 38rem);
   object-fit: cover;
 }
 
@@ -596,6 +596,7 @@ h3 {
 
 .case-card {
   position: relative;
+  height: 28rem;
   min-height: 28rem;
   overflow: hidden;
   border: 1px solid rgba(34, 31, 27, 0.1);
@@ -612,7 +613,7 @@ h3 {
 .case-card img {
   width: 100%;
   height: 100%;
-  min-height: inherit;
+  min-height: 0;
   object-fit: cover;
   transition: transform 600ms ease;
 }
@@ -683,6 +684,92 @@ h3 {
 
 .attire-strip img:nth-child(3) {
   object-position: center 35%;
+}
+
+.journal {
+  background: var(--warm);
+}
+
+.journal-grid,
+.article-list-grid,
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.journal-card,
+.article-list-card,
+.related-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 0.75rem 1.75rem rgba(34, 31, 27, 0.08);
+}
+
+.journal-card a,
+.article-list-card a,
+.related-card a {
+  display: grid;
+  height: 100%;
+  min-height: 16rem;
+  padding: 1.15rem;
+}
+
+.journal-card.featured {
+  grid-column: span 2;
+}
+
+.journal-card.featured a {
+  grid-template-rows: auto 1fr;
+  padding: 0;
+}
+
+.journal-card img,
+.article-list-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.5rem 0.5rem 0 0;
+  object-fit: cover;
+}
+
+.journal-card.featured div {
+  padding: 1.15rem;
+}
+
+.journal-card span,
+.article-list-card span,
+.related-card span,
+.article-meta {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--wine);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.journal-card h3,
+.article-list-card h2,
+.article-list-card h3,
+.related-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.22rem;
+}
+
+.journal-card p,
+.article-list-card p,
+.related-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  color: var(--jade-deep);
+  font-weight: 800;
 }
 
 .process {
@@ -821,6 +908,146 @@ h3 {
   gap: 1rem;
 }
 
+.article-page .site-header {
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.94);
+  box-shadow: 0 0.5rem 1.5rem rgba(34, 31, 27, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.article-shell {
+  padding: 8rem 0 5rem;
+}
+
+.article-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 0.75fr);
+  gap: 2rem;
+  align-items: end;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-hero h1 {
+  max-width: 48rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-size: 3.45rem;
+}
+
+.article-hero p {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.article-hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: 3rem;
+  padding-top: 3rem;
+}
+
+.article-aside {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+  border-left: 3px solid var(--jade);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.article-aside strong {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+}
+
+.article-aside a {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--jade-deep);
+  font-weight: 800;
+}
+
+.article-body {
+  max-width: 48rem;
+}
+
+.article-body h2 {
+  margin-top: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.article-body h3 {
+  margin-top: 1.6rem;
+}
+
+.article-body p,
+.article-body li {
+  color: var(--muted);
+}
+
+.article-body ul,
+.article-body ol {
+  padding-left: 1.25rem;
+}
+
+.article-callout,
+.article-faq {
+  margin: 2rem 0;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  background: var(--warm);
+}
+
+.article-callout p:last-child,
+.article-faq p:last-child {
+  margin-bottom: 0;
+}
+
+.article-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.article-index-hero {
+  padding: 8rem 0 3rem;
+  background: var(--warm);
+}
+
+.article-index-hero h1 {
+  color: var(--ink);
+  font-size: 3.25rem;
+}
+
+.article-index-hero p {
+  max-width: 44rem;
+  color: var(--muted);
+}
+
+.article-list {
+  padding: 4rem 0 5rem;
+}
+
+.article-list-card a {
+  padding: 0;
+}
+
+.article-list-card div {
+  padding: 1.15rem;
+}
+
 @media (max-width: 980px) {
   .site-header {
     padding-inline: 1rem;
@@ -883,7 +1110,10 @@ h3 {
   }
 
   .intro-grid,
-  .service-grid {
+  .service-grid,
+  .journal-grid,
+  .article-list-grid,
+  .related-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -897,6 +1127,15 @@ h3 {
 
   .section-heading {
     display: block;
+  }
+
+  .article-hero,
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-aside {
+    position: static;
   }
 
   .appointment-copy {
@@ -953,6 +1192,7 @@ h3 {
   .services,
   .cases,
   .attire,
+  .journal,
   .process,
   .appointment {
     padding-block: 3.35rem;
@@ -974,13 +1214,21 @@ h3 {
   .venue-grid,
   .service-grid,
   .case-grid,
+  .journal-grid,
+  .article-list-grid,
+  .related-grid,
   .timeline,
   .booking-form {
     grid-template-columns: 1fr;
   }
 
+  .journal-card.featured {
+    grid-column: auto;
+  }
+
   .venue-feature img {
-    min-height: 30rem;
+    height: 30rem;
+    min-height: 0;
   }
 
   .venue-panel {
@@ -998,11 +1246,22 @@ h3 {
 
   .case-card,
   .case-card img {
+    height: 22rem;
     min-height: 22rem;
   }
 
   .case-card.large {
     grid-column: auto;
+  }
+
+  .article-shell,
+  .article-index-hero {
+    padding-top: 6.5rem;
+  }
+
+  .article-hero h1,
+  .article-index-hero h1 {
+    font-size: 2.35rem;
   }
 
   .footer-layout {

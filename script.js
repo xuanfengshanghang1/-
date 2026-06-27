@@ -5,10 +5,12 @@ const bookingForm = document.querySelector("[data-booking-form]");
 const formStatus = document.querySelector("[data-form-status]");
 
 function setHeaderState() {
+  if (!header) return;
   header.classList.toggle("scrolled", window.scrollY > 16);
 }
 
 function closeNav() {
+  if (!header || !navToggle) return;
   header.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
 }
@@ -16,24 +18,30 @@ function closeNav() {
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 
-navToggle.addEventListener("click", () => {
-  const isOpen = header.classList.toggle("open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-});
+if (header && navToggle) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
-nav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    closeNav();
-  }
-});
+if (nav) {
+  nav.addEventListener("click", (event) => {
+    if (event.target.matches("a")) {
+      closeNav();
+    }
+  });
+}
 
-bookingForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (bookingForm && formStatus) {
+  bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const formData = new FormData(bookingForm);
-  const name = String(formData.get("name") || "").trim();
-  const service = String(formData.get("service") || "婚礼服务").trim();
+    const formData = new FormData(bookingForm);
+    const name = String(formData.get("name") || "").trim();
+    const service = String(formData.get("service") || "婚礼服务").trim();
 
-  formStatus.textContent = `${name || "您好"}，咨询信息已记录。禧见文化顾问会围绕${service}尽快与你确认沟通时间。`;
-  bookingForm.reset();
-});
+    formStatus.textContent = `${name || "您好"}，咨询信息已记录。禧见文化顾问会围绕${service}尽快与你确认沟通时间。`;
+    bookingForm.reset();
+  });
+}
