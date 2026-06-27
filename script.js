@@ -5,6 +5,8 @@ const bookingForm = document.querySelector("[data-booking-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const serviceChoices = document.querySelectorAll("[data-service-choice]");
+const heroFilm = document.querySelector(".hero-film");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function setHeaderState() {
   if (!header) return;
@@ -34,12 +36,29 @@ function setServiceChoice(service) {
   }
 }
 
+function startHeroFilm() {
+  if (!heroFilm || reducedMotionQuery.matches) return;
+  heroFilm.muted = true;
+  const playPromise = heroFilm.play();
+  if (playPromise) {
+    playPromise.catch(() => {});
+  }
+}
+
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 window.addEventListener("load", () => {
   window.requestAnimationFrame(correctHashScroll);
   [350, 900, 1600].forEach((delay) => window.setTimeout(correctHashScroll, delay));
+  startHeroFilm();
 });
+
+if (heroFilm) {
+  heroFilm.addEventListener("canplay", startHeroFilm, { once: true });
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) startHeroFilm();
+  });
+}
 
 if (header && navToggle) {
   navToggle.addEventListener("click", () => {
