@@ -216,7 +216,8 @@ textarea {
   isolation: isolate;
 }
 
-section[id] {
+section[id],
+.service-card[id] {
   scroll-margin-top: 5.25rem;
 }
 
@@ -1396,6 +1397,29 @@ h3 {
   padding: 3.25rem 0;
 }
 
+
+.service-map-copy h2 {
+  max-width: 38rem;
+  font-size: clamp(1.85rem, 2.4vw, 2.35rem);
+}
+
+.service-map .eyebrow {
+  color: var(--jade-deep);
+}
+
+.service-map-grid a {
+  position: relative;
+}
+
+.service-map-grid a::after {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.85rem;
+  color: var(--gold);
+  content: "→";
+  font-weight: 800;
+}
+
 .service-map-copy p:not(.eyebrow) {
   max-width: 34rem;
   color: var(--muted);
@@ -1505,6 +1529,7 @@ h3 {
 }
 
 .attire-feature {
+  height: 35rem;
   min-height: 35rem;
 }
 
@@ -1515,6 +1540,7 @@ h3 {
 }
 
 .attire-thumbs figure {
+  height: 17.05rem;
   min-height: 17.05rem;
 }
 
@@ -1629,6 +1655,7 @@ h3 {
 
   .attire-feature,
   .attire-thumbs figure {
+    height: 24rem;
     min-height: 24rem;
   }
 }

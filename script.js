@@ -17,6 +17,14 @@ function closeNav() {
   navToggle.setAttribute("aria-expanded", "false");
 }
 
+
+function correctHashScroll() {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+  target.scrollIntoView({ block: "start" });
+}
+
 function setServiceChoice(service) {
   const serviceSelect = bookingForm?.querySelector('[name="service"]');
   if (!serviceSelect || !service) return;
@@ -28,6 +36,10 @@ function setServiceChoice(service) {
 
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
+window.addEventListener("load", () => {
+  window.requestAnimationFrame(correctHashScroll);
+  [350, 900, 1600].forEach((delay) => window.setTimeout(correctHashScroll, delay));
+});
 
 if (header && navToggle) {
   navToggle.addEventListener("click", () => {
