@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>禧见文化 | 鎏金婚礼堂电影开场</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #221f1b;
+      }
+
+      [data-composition-id="xijian-hero-film"] {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: #fffdf8;
+        background: #221f1b;
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      }
+
+      .layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .hall {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.05) contrast(1.04) brightness(0.78);
+      }
+
+      .veil {
+        position: absolute;
+        right: -5%;
+        top: -12%;
+        width: 53%;
+        height: 124%;
+        object-fit: cover;
+        opacity: 0.18;
+        filter: saturate(0.75) contrast(1.1) brightness(1.25);
+        mix-blend-mode: screen;
+      }
+
+      .atelier {
+        position: absolute;
+        right: 6%;
+        bottom: 0;
+        width: 42%;
+        height: 62%;
+        object-fit: cover;
+        opacity: 0.12;
+        filter: saturate(0.82) contrast(1.08) brightness(1.15);
+        mix-blend-mode: screen;
+      }
+
+      .tone {
+        background:
+          radial-gradient(circle at 78% 32%, rgba(244, 223, 183, 0.3), transparent 28%),
+          linear-gradient(90deg, rgba(20, 24, 22, 0.86), rgba(20, 24, 22, 0.52) 46%, rgba(20, 24, 22, 0.2) 100%),
+          linear-gradient(0deg, rgba(36, 62, 54, 0.36), rgba(34, 31, 27, 0.08));
+      }
+
+      .sweep {
+        width: 42%;
+        left: -30%;
+        background: linear-gradient(110deg, transparent 20%, rgba(244, 223, 183, 0.36) 48%, transparent 72%);
+        filter: blur(8px);
+        opacity: 0;
+        transform: skewX(-16deg);
+      }
+
+      .brand-ghost {
+        position: absolute;
+        right: 7%;
+        bottom: 10%;
+        text-align: right;
+        opacity: 0;
+      }
+
+      .brand-ghost strong {
+        display: block;
+        font-family: "Songti SC", "SimSun", serif;
+        font-size: 96px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        text-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      .brand-ghost span {
+        display: block;
+        margin-top: 20px;
+        color: #f4dfb7;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.32em;
+      }
+
+      .rule {
+        position: absolute;
+        right: 7.5%;
+        bottom: 25%;
+        width: 360px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #f4dfb7);
+        opacity: 0;
+        transform-origin: right center;
+      }
+
+      .grain {
+        opacity: 0.12;
+        mix-blend-mode: overlay;
+        background-image:
+          radial-gradient(circle at 10% 20%, rgba(255, 253, 248, 0.28) 0 1px, transparent 1px),
+          radial-gradient(circle at 70% 80%, rgba(255, 253, 248, 0.22) 0 1px, transparent 1px);
+        background-size: 18px 18px, 23px 23px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      data-composition-id="xijian-hero-film"
+      data-start="0"
+      data-duration="10"
+      data-track-index="0"
+      data-width="1920"
+      data-height="1080"
+    >
+      <img class="layer hall" src="../../assets/real/hero-gilded-hall.jpg" alt="" data-layout-ignore />
+      <img class="veil" src="../../assets/bridal/bridal-veil-editorial.jpg" alt="" data-layout-ignore />
+      <img class="atelier" src="../../assets/bridal/bridal-atelier-wide.jpg" alt="" data-layout-ignore />
+      <div class="layer tone" data-layout-ignore></div>
+      <div class="layer sweep" data-layout-ignore></div>
+      <div class="layer grain" data-layout-ignore></div>
+      <div class="rule" data-layout-ignore></div>
+      <div class="brand-ghost" data-layout-ignore>
+        <strong>禧见文化</strong>
+        <span>XI JIAN CULTURE</span>
+      </div>
+    </div>
+
+    <script src="vendor/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(".hall", { scale: 1.045, x: -10, y: 0 }, { scale: 1.085, x: 10, y: -8, duration: 5, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.fromTo(".veil", { x: 28, scale: 1.02, opacity: 0.1 }, { x: -18, scale: 1.055, opacity: 0.2, duration: 5, repeat: 1, yoyo: true, ease: "power1.inOut" }, 0);
+      tl.fromTo(".atelier", { x: 36, y: 16, opacity: 0.05 }, { x: -10, y: -8, opacity: 0.14, duration: 5, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.fromTo(".sweep", { x: "-45%", opacity: 0 }, { x: "310%", opacity: 0.58, duration: 4.2, repeat: 1, yoyo: true, ease: "power2.inOut" }, 1.2);
+      tl.fromTo(".brand-ghost", { y: 30, opacity: 0 }, { y: 0, opacity: 0.46, duration: 1.15, ease: "power3.out" }, 5.2);
+      tl.fromTo(".rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.7, duration: 0.9, ease: "expo.out" }, 5.55);
+      tl.to(".brand-ghost", { y: -12, opacity: 0, duration: 1.15, ease: "power2.in" }, 8.45);
+      tl.to(".rule", { scaleX: 0, opacity: 0, duration: 0.75, ease: "power2.in" }, 8.65);
+
+      window.__timelines["xijian-hero-film"] = tl;
+    </script>
+  </body>
+</html>

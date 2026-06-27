@@ -19,6 +19,7 @@
     <title>禧见文化 | 婚礼堂与高端定制婚礼</title>
     <link rel="preload" as="image" href="assets/real/hero-gilded-hall.jpg" />
     <link rel="preload" as="image" href="assets/bridal/bridal-hero-couture.jpg" />
+    <link rel="preload" as="video" href="assets/video/xijian-hero-film.mp4" type="video/mp4" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -80,7 +81,20 @@
 
     <main id="home">
       <section class="hero" aria-label="禧见文化婚礼堂">
-        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-media" aria-hidden="true">
+          <video
+            class="hero-film"
+            poster="assets/video/xijian-hero-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="assets/video/xijian-hero-film.mp4" type="video/mp4" />
+            <source src="assets/video/xijian-hero-film.webm" type="video/webm" />
+          </video>
+        </div>
         <div class="hero-ambient" aria-hidden="true"></div>
         <div class="hero-content">
           <div class="hero-copy" data-reveal>
